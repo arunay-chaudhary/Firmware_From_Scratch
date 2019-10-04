@@ -56,7 +56,25 @@ void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
 	}
 	else
 	{
-		//TODO
+		if(pGPIOx == GPIOA)
+		{
+			GPIOA_PCLK_DI();
+		}else if (pGPIOx == GPIOB)
+		{
+			GPIOB_PCLK_DI();
+		}else if (pGPIOx == GPIOC)
+		{
+			GPIOC_PCLK_DI();
+		}else if (pGPIOx == GPIOD)
+		{
+			GPIOD_PCLK_DI();
+		}else if (pGPIOx == GPIOE)
+		{
+			GPIOE_PCLK_DI();
+		}else if (pGPIOx == GPIOH)
+		{
+			GPIOH_PCLK_DI();
+		}
 	}
 
 }
@@ -98,7 +116,7 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 	}else
 	{
 		//this part will code later . ( interrupt mode)
-		if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode ==GPIO_MODE_IT_FT )
+		if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_IT_FT )
 		{
 			//1. configure the FTSR
 			EXTI->FTSR |= ( 1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
@@ -400,11 +418,11 @@ void GPIO_IRQPriorityConfig(uint8_t IRQNumber,uint32_t IRQPriority)
 {
 	//1. first lets find out the ipr register
 	uint8_t iprx = IRQNumber / 4;
-	uint8_t iprx_section  = IRQNumber %4 ;
+	uint8_t iprx_section  = IRQNumber %4;
 
 	uint8_t shift_amount = ( 8 * iprx_section) + ( 8 - NO_PR_BITS_IMPLEMENTED) ;
 
-	*(  NVIC_PR_BASE_ADDR + iprx ) |=  ( IRQPriority << shift_amount );
+	*(  NVIC_PR_BASE_ADDR + iprx) |=  ( IRQPriority << shift_amount );
 
 }
 /*********************************************************************
