@@ -18,6 +18,7 @@ typedef struct
 	uint32_t SPI_CPHA;												// Clock default phase
 	uint32_t SPI_CPOL;
 	uint32_t SPI_SSM;
+	uint32_t SPI_SSI;
 	uint32_t SPI_SclkSpeed;
 }SPI_Config_t;
 
@@ -28,9 +29,7 @@ typedef struct
 }SPI_Handle_t;
 
 /*
-<<<<<<< HEAD
-<<<<<<< HEAD
- * @SPI_DeviceMode
+
  */
 #define SPI_DEVICE_MODE_MASTER           1
 #define SPI_DEVICE_MODE_SLAVE            0
@@ -40,7 +39,7 @@ typedef struct
  */
 #define SPI_BUS_CONFIG_FD                1
 #define SPI_BUS_CONFIG_HD                2
-#define SPI_BUS_CONFIG_SIMPLEX_RXONLY    3
+#define SPI_BUS_CONFIG_SIMPLEX_RXONLY	 3
 
 
 /*
@@ -82,17 +81,30 @@ typedef struct
 #define SPI_SSM_EN                       1
 #define SPI_SSM_DI                       0
 
+#define SPI_RXNE_FLAG	(1 << SPI_SR-RXNE)
 #define SPI_TXE_FLAG    (1 << SPI_SR_TXE)
+#define SPI_CHSIDE_FLAG (1 << SPI_SR_CHSIDE)
+#define SPI_UDR_FLAG	(1 << SPI_SR_UDR)
+#define SPI_CRCERR_flag	(1 << SPI_SR_SRSERR)
+#define SPI_MODF_FLAG	(1 << SPI_SR_MODF)
+#define SPI_OVR_FLAG	(1 << SPI_SR_OVR)
+#define SPI_BSY_FLAG	(1 << SPI_SR_BSY)
+#define SPI_FRE_FLAG	(1 << SPI_SR_FRE)
 
+#define SPI_SSI_EN						 1
+#define SPI_SSI_DI						 0
+
+#define SPI_BSY                          1
 /*
-=======
->>>>>>> parent of 7f87328... Added SPI_Init(), started SendData
-=======
->>>>>>> parent of 7f87328... Added SPI_Init(), started SendData
+
  * Peripheral Clock setup
  */
 void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi);
 
+
+void  SPI_SSIConfig(SPI_RegDef_t *pSPIx, uint8_t EnOrDi);
+
+void  SPI_SSOEConfig(SPI_RegDef_t *pSPIx, uint8_t EnOrDi);
 /*
  * Init and De-init
  */
@@ -113,7 +125,7 @@ void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority);
 void SPI_IRQHandling(SPI_Handle_t *pSPIHandle);
 
-
+void SPIPeripheralControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi);
 
 #endif /* INC_STM32F401XX_SPI_DRIVER_H_ */
 

@@ -1,0 +1,31 @@
+/*
+ * 004spitxtesting.c
+ *
+ *  Created on: 13 Oct 2019
+ *      Author: aruna
+ */
+
+#include "stm32f401xx.h"
+#include "stm32f401xx_gpio_driver.h"
+#include "stm32f401xx_spi_driver.h"
+
+void config_SPI2(GPIO_Handle_t *pSPI2);
+
+/*
+ * SPI2 PINS SELECTED
+ *
+ * PB12: SPI2_NSS
+ * PB13: SPI2_SCK
+ * PB14: SPI2_MISO
+ * PB15: SPI2_MOSI
+ * ALTFN_MODE: 5
+ *
+ * */
+
+
+
+int main(void)
+{
+
+	return 0;
+}

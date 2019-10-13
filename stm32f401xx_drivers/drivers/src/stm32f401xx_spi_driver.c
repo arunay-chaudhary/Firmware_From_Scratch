@@ -51,13 +51,11 @@ void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi)
  */
 void SPI_Init(SPI_Handle_t *pSPIHandle)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-	GPIO_Handle_t SPIPins;
-=======
-	uint32_t temp = 0;
->>>>>>> parent of 13e1cfe... Updated SPI4 not finished though
+
+	SPI_PeriClockControl(pSPIHandle->pSPIx, ENABLE);
+
+	uint32_t temp = 0;	/*Store all configuration bits in this variable and write it to register*/
+
 
 	//Config device mode
 
@@ -85,44 +83,68 @@ void SPI_Init(SPI_Handle_t *pSPIHandle)
     //Config CPOL
 	temp |= pSPIHandle->SPIConfig.SPI_CPOL << SPI_CR1_CPOL;
 
-<<<<<<< HEAD
-=======
->>>>>>> parent of 7f87328... Added SPI_Init(), started SendData
-=======
->>>>>>> parent of 7f87328... Added SPI_Init(), started SendData
-=======
 	//Config CPHA
 	temp |= pSPIHandle->SPIConfig.SPI_CPHA << SPI_CR1_CPHA;
->>>>>>> parent of 13e1cfe... Updated SPI4 not finished though
+
+	temp |= pSPIHandle->SPIConfig.SPI_SSM << SPI_CR1_SSM;
 
 	pSPIHandle->pSPIx->CR1 = temp;
 
 
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-	SPI_Init(&SPI2handle);
-=======
->>>>>>> parent of 13e1cfe... Updated SPI4 not finished though
 }
 
 
 void SPI_DeInit(SPI_RegDef_t *pSPIx)
 {
-<<<<<<< HEAD
-	char user_data[] = "Hello world";
-=======
-void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxBuffer, uint32_t Len)
+	if(pSPIx == SPI1)
+	{
+		SPI1_PCLK_DI();
+	}else if (pSPIx == SPI2)
+	{
+		SPI2_PCLK_DI();
+	}else if (pSPIx == SPI3)
+	{
+		SPI3_PCLK_DI();
+	}else if (pSPIx == SPI4)
+	{
+		SPI4_PCLK_DI();
+	}
+}
+
+void SPIPeripheralControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi)
 {
->>>>>>> parent of 7f87328... Added SPI_Init(), started SendData
-=======
-void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxBuffer, uint32_t Len)
+	if(EnorDi == ENABLE)
+	{
+		pSPIx->CR1 |= (1 << SPI_CR1_SPE);
+	}else
+	{
+		pSPIx->CR1 |= (0 << SPI_CR1_SPE);
+	}
+}
+
+void  SPI_SSIConfig(SPI_RegDef_t *pSPIx, uint8_t EnOrDi)
 {
->>>>>>> parent of 7f87328... Added SPI_Init(), started SendData
-=======
->>>>>>> parent of 13e1cfe... Updated SPI4 not finished though
+	if(EnOrDi == ENABLE)
+	{
+		pSPIx->CR1 |=  (1 << SPI_CR1_SSI);
+	}else
+	{
+		pSPIx->CR1 &=  ~(1 << SPI_CR1_SSI);
+	}
+
+
+}
+
+void  SPI_SSOEConfig(SPI_RegDef_t *pSPIx, uint8_t EnOrDi)
+{
+	if(EnOrDi == ENABLE)
+	{
+		pSPIx->CR2 |=  (1 << SPI_CR2_SSOE);
+	}else
+	{
+		pSPIx->CR2 &=  ~(1 << SPI_CR2_SSOE);
+	}
+
 
 }
 
@@ -139,14 +161,31 @@ uint8_t SPI_GetFlagStatus(SPI_RegDef_t *pSPIx, uint32_t FlagName)
 	return FLAG_RESET;
 }
 
-void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxBuffer, uint32_t Len)
+void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxBuffer, uint32_t Len)  //Blocking API (Polling)
 {
+
 	while(Len > 0)
 	{
 		while(SPI_GetFlagStatus(pSPIx, SPI_TXE_FLAG) == FLAG_RESET);
+		if (pSPIx->CR1 & ( 1 << SPI_CR1_DFF ) )
+		{
+			//16bit DFF
+			pSPIx->DR = *((uint16_t*) pTxBuffer);
+			Len--;
+			Len--;
+			(uint16_t*) pTxBuffer++;
+		}else
+		{
+			//8bit DFF
+			pSPIx->DR = *pTxBuffer;
+			Len--;
+			pTxBuffer++;
+		}
+
 	}
 
 }
+
 void SPI_ReceiveData (SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len)
 {
 

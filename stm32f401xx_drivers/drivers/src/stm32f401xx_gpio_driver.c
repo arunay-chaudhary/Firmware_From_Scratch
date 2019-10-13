@@ -5,12 +5,6 @@
  *      Author: aruna
  */
 
-/*
- * stm32f401xx_gpio_driver.c
- *
- *  Created on: Jan 29, 2019
- *      Author: admin
- */
 
 
 #include "stm32f401xx_gpio_driver.h"
