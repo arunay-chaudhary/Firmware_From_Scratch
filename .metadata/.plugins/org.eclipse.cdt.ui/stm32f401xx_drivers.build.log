@@ -1,18 +1,18 @@
-19:50:44 **** Build of configuration Debug for project stm32f401xx_drivers ****
+19:51:36 **** Build of configuration Debug for project stm32f401xx_drivers ****
 make -j4 all 
 Building file: ../startup/startup_stm32.s
 Building file: ../startup/sysmem.c
 Building file: ../src/005spiarduino.c
-Building file: ../drivers/src/stm32f401xx_gpio_driver.c
 Invoking: MCU GCC Assembler
-Invoking: MCU GCC Compiler
+Building file: ../drivers/src/stm32f401xx_gpio_driver.c
 Invoking: MCU GCC Compiler
 Invoking: MCU GCC Compiler
 D:\Users\aruna\Embedded_Projects\workspace\Firmware_From_Scratch\stm32f401xx_drivers\Debug
-D:\Users\aruna\Embedded_Projects\workspace\Firmware_From_Scratch\stm32f401xx_drivers\Debug
-D:\Users\aruna\Embedded_Projects\workspace\Firmware_From_Scratch\stm32f401xx_drivers\Debug
+Invoking: MCU GCC Compiler
 arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
+D:\Users\aruna\Embedded_Projects\workspace\Firmware_From_Scratch\stm32f401xx_drivers\Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F401RETx -DNUCLEO_F401RE -DDEBUG -I"D:/Users/aruna/Embedded_Projects/workspace/Firmware_From_Scratch/stm32f401xx_drivers/drivers/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/sysmem.d" -MT"startup/sysmem.o" -o "startup/sysmem.o" "../startup/sysmem.c"
+D:\Users\aruna\Embedded_Projects\workspace\Firmware_From_Scratch\stm32f401xx_drivers\Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F401RETx -DNUCLEO_F401RE -DDEBUG -I"D:/Users/aruna/Embedded_Projects/workspace/Firmware_From_Scratch/stm32f401xx_drivers/drivers/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/005spiarduino.d" -MT"src/005spiarduino.o" -o "src/005spiarduino.o" "../src/005spiarduino.c"
 D:\Users\aruna\Embedded_Projects\workspace\Firmware_From_Scratch\stm32f401xx_drivers\Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F401RETx -DNUCLEO_F401RE -DDEBUG -I"D:/Users/aruna/Embedded_Projects/workspace/Firmware_From_Scratch/stm32f401xx_drivers/drivers/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"drivers/src/stm32f401xx_gpio_driver.d" -MT"drivers/src/stm32f401xx_gpio_driver.o" -o "drivers/src/stm32f401xx_gpio_driver.o" "../drivers/src/stm32f401xx_gpio_driver.c"
@@ -26,11 +26,11 @@ Building file: ../drivers/src/stm32f401xx_spi_driver.c
 Invoking: MCU GCC Compiler
 D:\Users\aruna\Embedded_Projects\workspace\Firmware_From_Scratch\stm32f401xx_drivers\Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F401RETx -DNUCLEO_F401RE -DDEBUG -I"D:/Users/aruna/Embedded_Projects/workspace/Firmware_From_Scratch/stm32f401xx_drivers/drivers/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"drivers/src/stm32f401xx_spi_driver.d" -MT"drivers/src/stm32f401xx_spi_driver.o" -o "drivers/src/stm32f401xx_spi_driver.o" "../drivers/src/stm32f401xx_spi_driver.c"
+Finished building: ../startup/sysmem.c
 Finished building: ../drivers/src/stm32f401xx_gpio_driver.c
  
-Finished building: ../startup/sysmem.c
-Finished building: ../src/005spiarduino.c
  
+Finished building: ../src/005spiarduino.c
  
 Finished building: ../drivers/src/stm32f401xx_spi_driver.c
  
@@ -47,5 +47,5 @@ arm-none-eabi-size "stm32f401xx_drivers.elf"
    3464	   1080	   1092	   5636	   1604	stm32f401xx_drivers.elf
  
 
-19:50:46 Build Finished (took 2s.12ms)
+19:51:38 Build Finished (took 1s.958ms)
 
