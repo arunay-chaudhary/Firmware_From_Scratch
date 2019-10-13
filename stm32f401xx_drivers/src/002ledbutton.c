@@ -31,7 +31,7 @@ int main(void)
 			GPIO_ToggleOutputPin(GPIOA,GPIO_PIN_NO_5);
 		}else
 		{
-			GPIO_WriteToOutputPin(GPIOC, GPIO_PIN_NO_13, DISABLE);
+			GPIO_WriteToOutputPin(GPIOA,GPIO_PIN_NO_5, DISABLE);
 		}
 
 	}

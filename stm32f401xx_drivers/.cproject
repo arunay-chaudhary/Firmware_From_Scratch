@@ -57,12 +57,12 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.2114934535.1298786517" name="001ledon.c" rcbsApplicability="disable" resourcePath="src/001ledon.c" toolsToInvoke="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.905115419.246669672">
-						<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.905115419.246669672" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.905115419"/>
+					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.2114934535.9166530" name="005spiarduino.c" rcbsApplicability="disable" resourcePath="src/005spiarduino.c" toolsToInvoke="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.905115419.939621363">
+						<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.905115419.939621363" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.905115419"/>
 					</fileInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="drivers"/>
-						<entry excluding="001ledon.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="004spitxtesting.c|003ledbuttoninterrupt.c|002ledbutton.c|001ledon.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="startup"/>
 					</sourceEntries>
 				</configuration>
