@@ -18,7 +18,7 @@
 
 /**********************************START:Processor Specific Details **********************************/
 /*
- * ARM Cortex Mx Processor NVIC ISERx register Addresses
+ * ARM Cortex M4 Processor NVIC ISERx register Addresses
  */
 
 #define NVIC_ISER0          ( (__vo uint32_t*)0xE000E100 )
@@ -97,6 +97,7 @@
  */
 #define EXTI_BASEADDR						(APB2PERIPH_BASEADDR + 0x3C00)
 #define SPI1_BASEADDR						(APB2PERIPH_BASEADDR + 0x3000)
+#define SPI4_BASEADDR						(APB2PERIPH_BASEADDR + 0x3400)
 #define SYSCFG_BASEADDR        				(APB2PERIPH_BASEADDR + 0x3800)
 #define USART1_BASEADDR						(APB2PERIPH_BASEADDR + 0x1000)
 #define USART6_BASEADDR						(APB2PERIPH_BASEADDR + 0x1400)
@@ -261,7 +262,7 @@ typedef struct
 #define SPI1  				((SPI_RegDef_t*)SPI1_BASEADDR)
 #define SPI2  				((SPI_RegDef_t*)SPI2_BASEADDR)
 #define SPI3  				((SPI_RegDef_t*)SPI3_BASEADDR)
-
+#define SPI4				((SPI_RegDef_t*)SPI4_BASEADDR)
 #define I2C1  				((I2C_RegDef_t*)I2C1_BASEADDR)
 #define I2C2  				((I2C_RegDef_t*)I2C2_BASEADDR)
 #define I2C3  				((I2C_RegDef_t*)I2C3_BASEADDR)
@@ -297,13 +298,20 @@ typedef struct
 
 
 /*
- * Clock Enable Macros for SPIx peripheralsbu
+ * Clock Enable Macros for SPIx peripherals
  */
 #define SPI1_PCLK_EN() (RCC->APB2ENR |= (1 << 12))
 #define SPI2_PCLK_EN() (RCC->APB1ENR |= (1 << 14))
 #define SPI3_PCLK_EN() (RCC->APB1ENR |= (1 << 15))
 #define SPI4_PCLK_EN() (RCC->APB2ENR |= (1 << 13))
 
+/*
+ * Clock Disable Macros for SPIx peripherals
+ */
+#define SPI1_PCLK_DI() (RCC->APB2ENR |= (0 << 12))
+#define SPI2_PCLK_DI() (RCC->APB1ENR |= (0 << 14))
+#define SPI3_PCLK_DI() (RCC->APB1ENR |= (0 << 15))
+#define SPI4_PCLK_DI() (RCC->APB2ENR |= (0 << 13))
 
 /*
  * Clock Enable Macros for USARTx peripherals
@@ -334,9 +342,6 @@ typedef struct
 #define GPIOH_PCLK_DI()		(RCC->AHB1ENR |= (0 << 7))
 #define GPIOI_PCLK_DI()		(RCC->AHB1ENR |= (0 << 8))
 
-/*
- * Clock Disable Macros for SPIx peripherals
- */
 
 /*
  * Clock Disable Macros for USARTx peripherals
@@ -379,24 +384,61 @@ typedef struct
  * TODO: You may complete this list for other peripherals
  */
 
+#define IRQ_NO_WWDG         0
+#define IRQ_NO_EXTI16_PV    1
+#define IRQ_NO_EXTI21_RTC_WKUP 3
+#define IRQ_NO_RCC          5
 #define IRQ_NO_EXTI0 		6
 #define IRQ_NO_EXTI1 		7
 #define IRQ_NO_EXTI2 		8
 #define IRQ_NO_EXTI3 		9
 #define IRQ_NO_EXTI4 		10
+#define IRQ_NO_DMA1_STREAM0 11
+#define IRQ_NO_DMA1_STREAM1 12
+#define IRQ_NO_DMA1_STREAM2 13
+#define IRQ_NO_DMA1_STREAM3 14
+#define IRQ_NO_DMA1_STREAM4 15
+#define IRQ_NO_DMA1_STREAM5 16
+#define IRQ_NO_DMA1_STREAM6 17
+#define IRQ_NO_ADC          18
 #define IRQ_NO_EXTI9_5 		23
-#define IRQ_NO_EXTI15_10 	40
+#define IRQ_NO_TIM1_BRK_TIM9 24
+#define IRQ_NO_TIM1_UP_TIM10 25
+#define IRQ_NO_TIM1_TRG_COM_TIM11 26
+#define IRQ_NO_TIM1_CC      27
+#define IRQ_NO_TIM2         28
+#define IRQ_NO_TIM3         29
+#define IRQ_NO_TIM4         30
+#define IRQ_NO_I2C1_EV      31
+#define IRQ_NO_I2C1_ER      32
+#define IRQ_NO_I2C2_EV      33
+#define IRQ_NO_I2C2_ER      34
 #define IRQ_NO_SPI1			35
 #define IRQ_NO_SPI2         36
-#define IRQ_NO_SPI3         51
-#define IRQ_NO_SPI4
-#define IRQ_NO_I2C1_EV     31
-#define IRQ_NO_I2C1_ER     32
 #define IRQ_NO_USART1	    37
 #define IRQ_NO_USART2	    38
 #define IRQ_NO_USART3	    39
-#define IRQ_NO_UART4	    52
-#define IRQ_NO_UART5	    53
+#define IRQ_NO_EXTI15_10 	40
+#define IRQ_NO_EXTI17_RTC_ALARM 41
+#define IRQ_NO_EXTI18_OTG_FS_WKUP 42
+#define IRQ_NO_DMA1_STREAM7 47
+#define IRQ_NO_SDIO         49
+#define IRQ_NO_TIM5         50
+#define IRQ_NO_SPI3         51
+#define IRQ_NO_DMA2_STREAM0 56
+#define IRQ_NO_DMA2_STREAM1 57
+#define IRQ_NO_DMA2_STREAM2 58
+#define IRQ_NO_DMA2_STREAM3 59
+#define IRQ_NO_DMA2_STREAM4 60
+#define IRQ_NO_OTG_FS       67
+#define IRQ_NO_DMA2_STREAM5 68
+#define IRQ_NO_DMA2_STREAM6 69
+#define IRQ_NO_DMA2_STREAM7 70
+#define IRQ_NO_I2C3_EV      72
+#define IRQ_NO_I2C3_ER      73
+#define IRQ_NO_FPU          81
+#define IRQ_NO_SPI4         84
+
 #define IRQ_NO_USART6	    71
 
 
@@ -597,6 +639,7 @@ typedef struct
 #define USART_SR_CTS        			9
 
 #include "stm32f401xx_gpio_driver.h"
+#include "stm32f401xx_spi_driver.h"
 
 
 #endif /* INC_STM32F401XX_H_ */

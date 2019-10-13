@@ -10,6 +10,8 @@ d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.20
                               d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/crt0.o (__libc_init_array)
 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-memset.o)
                               d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/crt0.o (memset)
+d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-strlen.o)
+                              src/005spiarduino.o (strlen)
 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
                               d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-exit.o) (__call_exitprocs)
 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-atexit.o)
@@ -65,6 +67,7 @@ Discarded input sections
  .group         0x00000000        0xc drivers/src/stm32f401xx_gpio_driver.o
  .group         0x00000000        0xc drivers/src/stm32f401xx_gpio_driver.o
  .group         0x00000000        0xc drivers/src/stm32f401xx_gpio_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f401xx_gpio_driver.o
  .text          0x00000000        0x0 drivers/src/stm32f401xx_gpio_driver.o
  .data          0x00000000        0x0 drivers/src/stm32f401xx_gpio_driver.o
  .bss           0x00000000        0x0 drivers/src/stm32f401xx_gpio_driver.o
@@ -74,35 +77,85 @@ Discarded input sections
                 0x00000000       0x1c drivers/src/stm32f401xx_gpio_driver.o
  .text.GPIO_WriteToOutputPort
                 0x00000000       0x1e drivers/src/stm32f401xx_gpio_driver.o
+ .text.GPIO_ToggleOutputPin
+                0x00000000       0x2a drivers/src/stm32f401xx_gpio_driver.o
  .text.GPIO_IRQInterruptConfig
                 0x00000000      0x10c drivers/src/stm32f401xx_gpio_driver.o
  .text.GPIO_IRQPriorityConfig
                 0x00000000       0x54 drivers/src/stm32f401xx_gpio_driver.o
  .text.GPIO_IRQHandling
                 0x00000000       0x40 drivers/src/stm32f401xx_gpio_driver.o
- .group         0x00000000        0xc src/002ledbutton.o
- .group         0x00000000        0xc src/002ledbutton.o
- .group         0x00000000        0xc src/002ledbutton.o
- .group         0x00000000        0xc src/002ledbutton.o
- .group         0x00000000        0xc src/002ledbutton.o
- .group         0x00000000        0xc src/002ledbutton.o
- .group         0x00000000        0xc src/002ledbutton.o
- .group         0x00000000        0xc src/002ledbutton.o
- .group         0x00000000        0xc src/002ledbutton.o
- .group         0x00000000        0xc src/002ledbutton.o
- .text          0x00000000        0x0 src/002ledbutton.o
- .data          0x00000000        0x0 src/002ledbutton.o
- .bss           0x00000000        0x0 src/002ledbutton.o
- .debug_macro   0x00000000      0xa66 src/002ledbutton.o
- .debug_macro   0x00000000      0x174 src/002ledbutton.o
- .debug_macro   0x00000000       0x22 src/002ledbutton.o
- .debug_macro   0x00000000       0x87 src/002ledbutton.o
- .debug_macro   0x00000000       0x51 src/002ledbutton.o
- .debug_macro   0x00000000       0xef src/002ledbutton.o
- .debug_macro   0x00000000       0x6a src/002ledbutton.o
- .debug_macro   0x00000000      0x1df src/002ledbutton.o
- .debug_macro   0x00000000      0x658 src/002ledbutton.o
- .debug_macro   0x00000000       0xc4 src/002ledbutton.o
+ .group         0x00000000        0xc drivers/src/stm32f401xx_spi_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f401xx_spi_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f401xx_spi_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f401xx_spi_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f401xx_spi_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f401xx_spi_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f401xx_spi_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f401xx_spi_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f401xx_spi_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f401xx_spi_driver.o
+ .group         0x00000000        0xc drivers/src/stm32f401xx_spi_driver.o
+ .text          0x00000000        0x0 drivers/src/stm32f401xx_spi_driver.o
+ .data          0x00000000        0x0 drivers/src/stm32f401xx_spi_driver.o
+ .bss           0x00000000        0x0 drivers/src/stm32f401xx_spi_driver.o
+ .text.SPI_DeInit
+                0x00000000       0x70 drivers/src/stm32f401xx_spi_driver.o
+ .text.SPI_SSIConfig
+                0x00000000       0x38 drivers/src/stm32f401xx_spi_driver.o
+ .text.SPI_ReceiveData
+                0x00000000       0x18 drivers/src/stm32f401xx_spi_driver.o
+ .text.SPI_IRQInterruptConfig
+                0x00000000       0x1c drivers/src/stm32f401xx_spi_driver.o
+ .text.SPI_IRQPriorityConfig
+                0x00000000       0x18 drivers/src/stm32f401xx_spi_driver.o
+ .text.SPI_IRQHandling
+                0x00000000       0x14 drivers/src/stm32f401xx_spi_driver.o
+ .debug_macro   0x00000000      0xa66 drivers/src/stm32f401xx_spi_driver.o
+ .debug_macro   0x00000000      0x174 drivers/src/stm32f401xx_spi_driver.o
+ .debug_macro   0x00000000       0x22 drivers/src/stm32f401xx_spi_driver.o
+ .debug_macro   0x00000000       0x87 drivers/src/stm32f401xx_spi_driver.o
+ .debug_macro   0x00000000       0x51 drivers/src/stm32f401xx_spi_driver.o
+ .debug_macro   0x00000000       0xef drivers/src/stm32f401xx_spi_driver.o
+ .debug_macro   0x00000000       0x6a drivers/src/stm32f401xx_spi_driver.o
+ .debug_macro   0x00000000      0x1df drivers/src/stm32f401xx_spi_driver.o
+ .debug_macro   0x00000000      0x77d drivers/src/stm32f401xx_spi_driver.o
+ .debug_macro   0x00000000       0xc4 drivers/src/stm32f401xx_spi_driver.o
+ .debug_macro   0x00000000       0xca drivers/src/stm32f401xx_spi_driver.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .group         0x00000000        0xc src/005spiarduino.o
+ .text          0x00000000        0x0 src/005spiarduino.o
+ .data          0x00000000        0x0 src/005spiarduino.o
+ .bss           0x00000000        0x0 src/005spiarduino.o
+ .debug_macro   0x00000000      0xa66 src/005spiarduino.o
+ .debug_macro   0x00000000       0x22 src/005spiarduino.o
+ .debug_macro   0x00000000      0x174 src/005spiarduino.o
+ .debug_macro   0x00000000       0xef src/005spiarduino.o
+ .debug_macro   0x00000000       0x6a src/005spiarduino.o
+ .debug_macro   0x00000000      0x1df src/005spiarduino.o
+ .debug_macro   0x00000000      0x77d src/005spiarduino.o
+ .debug_macro   0x00000000       0xc4 src/005spiarduino.o
  .text          0x00000000       0x14 startup/startup_stm32.o
  .data          0x00000000        0x0 startup/startup_stm32.o
  .bss           0x00000000        0x0 startup/startup_stm32.o
@@ -215,6 +268,8 @@ Discarded input sections
  .debug_frame   0x00000000       0x38 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-memset.o)
  .ARM.attributes
                 0x00000000       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-memset.o)
+ .data          0x00000000        0x0 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-strlen.o)
+ .bss           0x00000000        0x0 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-strlen.o)
  .text          0x00000000        0x0 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
  .data          0x00000000        0x0 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
  .bss           0x00000000        0x0 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
@@ -271,7 +326,8 @@ LOAD d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16
 LOAD d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
 LOAD d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard/crt0.o
 LOAD drivers/src/stm32f401xx_gpio_driver.o
-LOAD src/002ledbutton.o
+LOAD drivers/src/stm32f401xx_spi_driver.o
+LOAD src/005spiarduino.o
 LOAD startup/startup_stm32.o
 LOAD startup/sysmem.o
 LOAD d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libm.a
@@ -292,184 +348,211 @@ LOAD d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16
                 0x08000000                g_pfnVectors
                 0x08000194                . = ALIGN (0x4)
 
-.text           0x08000194      0x774
-                0x08000194                . = ALIGN (0x4)
+.text           0x080001c0      0xbe0
+                0x080001c0                . = ALIGN (0x4)
  *(.text)
- .text          0x08000194       0x40 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+ .text          0x080001c0       0x40 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+ .text          0x08000200       0xdc d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-strlen.o)
+                0x08000200                strlen
  *(.text*)
  .text.GPIO_PeriClockControl
-                0x080001d4       0xbc drivers/src/stm32f401xx_gpio_driver.o
-                0x080001d4                GPIO_PeriClockControl
+                0x080002dc      0x128 drivers/src/stm32f401xx_gpio_driver.o
+                0x080002dc                GPIO_PeriClockControl
  .text.GPIO_Init
-                0x08000290      0x30c drivers/src/stm32f401xx_gpio_driver.o
-                0x08000290                GPIO_Init
+                0x08000404      0x30c drivers/src/stm32f401xx_gpio_driver.o
+                0x08000404                GPIO_Init
  .text.GPIO_ReadFromInputPin
-                0x0800059c       0x2c drivers/src/stm32f401xx_gpio_driver.o
-                0x0800059c                GPIO_ReadFromInputPin
+                0x08000710       0x2c drivers/src/stm32f401xx_gpio_driver.o
+                0x08000710                GPIO_ReadFromInputPin
  .text.GPIO_WriteToOutputPin
-                0x080005c8       0x4a drivers/src/stm32f401xx_gpio_driver.o
-                0x080005c8                GPIO_WriteToOutputPin
- .text.GPIO_ToggleOutputPin
-                0x08000612       0x2a drivers/src/stm32f401xx_gpio_driver.o
-                0x08000612                GPIO_ToggleOutputPin
- .text.main     0x0800063c       0x48 src/002ledbutton.o
-                0x0800063c                main
- .text.delay    0x08000684       0x2c src/002ledbutton.o
-                0x08000684                delay
- .text.config_leds
-                0x080006b0       0x48 src/002ledbutton.o
-                0x080006b0                config_leds
+                0x0800073c       0x4a drivers/src/stm32f401xx_gpio_driver.o
+                0x0800073c                GPIO_WriteToOutputPin
+ *fill*         0x08000786        0x2 
+ .text.SPI_PeriClockControl
+                0x08000788       0xd0 drivers/src/stm32f401xx_spi_driver.o
+                0x08000788                SPI_PeriClockControl
+ .text.SPI_Init
+                0x08000858       0xaa drivers/src/stm32f401xx_spi_driver.o
+                0x08000858                SPI_Init
+ .text.SPIPeripheralControl
+                0x08000902       0x34 drivers/src/stm32f401xx_spi_driver.o
+                0x08000902                SPIPeripheralControl
+ .text.SPI_SSOEConfig
+                0x08000936       0x38 drivers/src/stm32f401xx_spi_driver.o
+                0x08000936                SPI_SSOEConfig
+ .text.SPI_GetFlagStatus
+                0x0800096e       0x28 drivers/src/stm32f401xx_spi_driver.o
+                0x0800096e                SPI_GetFlagStatus
+ .text.SPI_SendData
+                0x08000996       0x6c drivers/src/stm32f401xx_spi_driver.o
+                0x08000996                SPI_SendData
+ *fill*         0x08000a02        0x2 
+ .text.main     0x08000a04       0xb0 src/005spiarduino.o
+                0x08000a04                main
+ .text.SPI2_GPIOInit
+                0x08000ab4       0x50 src/005spiarduino.o
+                0x08000ab4                SPI2_GPIOInit
+ .text.SPI2Inits
+                0x08000b04       0x3c src/005spiarduino.o
+                0x08000b04                SPI2Inits
  .text.config_pb
-                0x080006f8       0x40 src/002ledbutton.o
-                0x080006f8                config_pb
+                0x08000b40       0x30 src/005spiarduino.o
+                0x08000b40                config_pb
+ .text.config_leds
+                0x08000b70       0x34 src/005spiarduino.o
+                0x08000b70                config_leds
+ .text.delay    0x08000ba4       0x2c src/005spiarduino.o
+                0x08000ba4                delay
  .text.Reset_Handler
-                0x08000738       0x50 startup/startup_stm32.o
-                0x08000738                Reset_Handler
+                0x08000bd0       0x50 startup/startup_stm32.o
+                0x08000bd0                Reset_Handler
  .text.Default_Handler
-                0x08000788        0x2 startup/startup_stm32.o
-                0x08000788                RTC_Alarm_IRQHandler
-                0x08000788                EXTI2_IRQHandler
-                0x08000788                DebugMon_Handler
-                0x08000788                SPI4_IRQHandler
-                0x08000788                TIM1_CC_IRQHandler
-                0x08000788                HardFault_Handler
-                0x08000788                SysTick_Handler
-                0x08000788                PVD_IRQHandler
-                0x08000788                SDIO_IRQHandler
-                0x08000788                TAMP_STAMP_IRQHandler
-                0x08000788                PendSV_Handler
-                0x08000788                NMI_Handler
-                0x08000788                EXTI3_IRQHandler
-                0x08000788                TIM1_UP_TIM10_IRQHandler
-                0x08000788                I2C3_ER_IRQHandler
-                0x08000788                EXTI0_IRQHandler
-                0x08000788                I2C2_EV_IRQHandler
-                0x08000788                FPU_IRQHandler
-                0x08000788                UsageFault_Handler
-                0x08000788                SPI1_IRQHandler
-                0x08000788                TIM1_BRK_TIM9_IRQHandler
-                0x08000788                I2C1_EV_IRQHandler
-                0x08000788                TIM3_IRQHandler
-                0x08000788                RCC_IRQHandler
-                0x08000788                Default_Handler
-                0x08000788                EXTI15_10_IRQHandler
-                0x08000788                ADC_IRQHandler
-                0x08000788                I2C3_EV_IRQHandler
-                0x08000788                EXTI9_5_IRQHandler
-                0x08000788                RTC_WKUP_IRQHandler
-                0x08000788                SPI2_IRQHandler
-                0x08000788                MemManage_Handler
-                0x08000788                SVC_Handler
-                0x08000788                EXTI4_IRQHandler
-                0x08000788                TIM2_IRQHandler
-                0x08000788                OTG_FS_WKUP_IRQHandler
-                0x08000788                TIM1_TRG_COM_TIM11_IRQHandler
-                0x08000788                EXTI1_IRQHandler
-                0x08000788                I2C2_ER_IRQHandler
-                0x08000788                FLASH_IRQHandler
-                0x08000788                BusFault_Handler
-                0x08000788                OTG_FS_IRQHandler
-                0x08000788                SPI3_IRQHandler
-                0x08000788                I2C1_ER_IRQHandler
- *fill*         0x0800078a        0x2 
+                0x08000c20        0x2 startup/startup_stm32.o
+                0x08000c20                RTC_Alarm_IRQHandler
+                0x08000c20                EXTI2_IRQHandler
+                0x08000c20                DebugMon_Handler
+                0x08000c20                SPI4_IRQHandler
+                0x08000c20                TIM1_CC_IRQHandler
+                0x08000c20                HardFault_Handler
+                0x08000c20                SysTick_Handler
+                0x08000c20                PVD_IRQHandler
+                0x08000c20                SDIO_IRQHandler
+                0x08000c20                TAMP_STAMP_IRQHandler
+                0x08000c20                PendSV_Handler
+                0x08000c20                NMI_Handler
+                0x08000c20                EXTI3_IRQHandler
+                0x08000c20                TIM1_UP_TIM10_IRQHandler
+                0x08000c20                I2C3_ER_IRQHandler
+                0x08000c20                EXTI0_IRQHandler
+                0x08000c20                I2C2_EV_IRQHandler
+                0x08000c20                FPU_IRQHandler
+                0x08000c20                UsageFault_Handler
+                0x08000c20                SPI1_IRQHandler
+                0x08000c20                TIM1_BRK_TIM9_IRQHandler
+                0x08000c20                I2C1_EV_IRQHandler
+                0x08000c20                TIM3_IRQHandler
+                0x08000c20                RCC_IRQHandler
+                0x08000c20                Default_Handler
+                0x08000c20                EXTI15_10_IRQHandler
+                0x08000c20                ADC_IRQHandler
+                0x08000c20                I2C3_EV_IRQHandler
+                0x08000c20                EXTI9_5_IRQHandler
+                0x08000c20                RTC_WKUP_IRQHandler
+                0x08000c20                SPI2_IRQHandler
+                0x08000c20                MemManage_Handler
+                0x08000c20                SVC_Handler
+                0x08000c20                EXTI4_IRQHandler
+                0x08000c20                TIM2_IRQHandler
+                0x08000c20                OTG_FS_WKUP_IRQHandler
+                0x08000c20                TIM1_TRG_COM_TIM11_IRQHandler
+                0x08000c20                EXTI1_IRQHandler
+                0x08000c20                I2C2_ER_IRQHandler
+                0x08000c20                FLASH_IRQHandler
+                0x08000c20                BusFault_Handler
+                0x08000c20                OTG_FS_IRQHandler
+                0x08000c20                SPI3_IRQHandler
+                0x08000c20                I2C1_ER_IRQHandler
+ *fill*         0x08000c22        0x2 
  .text.__libc_init_array
-                0x0800078c       0x48 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-init.o)
-                0x0800078c                __libc_init_array
+                0x08000c24       0x48 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-init.o)
+                0x08000c24                __libc_init_array
  .text.startup.register_fini
-                0x080007d4       0x14 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
- .text.atexit   0x080007e8        0xc d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-atexit.o)
-                0x080007e8                atexit
+                0x08000c6c       0x14 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
+ .text.atexit   0x08000c80        0xc d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-atexit.o)
+                0x08000c80                atexit
  .text.__libc_fini_array
-                0x080007f4       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-fini.o)
-                0x080007f4                __libc_fini_array
+                0x08000c8c       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-fini.o)
+                0x08000c8c                __libc_fini_array
  .text.__retarget_lock_acquire_recursive
-                0x08000828        0x4 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-lock.o)
-                0x08000828                __retarget_lock_acquire_recursive
+                0x08000cc0        0x4 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-lock.o)
+                0x08000cc0                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x0800082c        0x4 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-lock.o)
-                0x0800082c                __retarget_lock_release_recursive
+                0x08000cc4        0x4 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-lock.o)
+                0x08000cc4                __retarget_lock_release_recursive
  .text.__register_exitproc
-                0x08000830       0xc0 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__atexit.o)
-                0x08000830                __register_exitproc
+                0x08000cc8       0xc0 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__atexit.o)
+                0x08000cc8                __register_exitproc
  *(.glue_7)
- .glue_7        0x080008f0        0x0 linker stubs
+ .glue_7        0x08000d88        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x080008f0        0x0 linker stubs
+ .glue_7t       0x08000d88        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x080008f0        0x0 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+ .eh_frame      0x08000d88        0x0 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
  *(.init)
- .init          0x080008f0        0x4 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crti.o
-                0x080008f0                _init
- .init          0x080008f4        0x8 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
+ .init          0x08000d88        0x4 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crti.o
+                0x08000d88                _init
+ .init          0x08000d8c        0x8 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
  *(.fini)
- .fini          0x080008fc        0x4 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crti.o
-                0x080008fc                _fini
- .fini          0x08000900        0x8 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
-                0x08000908                . = ALIGN (0x4)
-                0x08000908                _etext = .
+ .fini          0x08000d94        0x4 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crti.o
+                0x08000d94                _fini
+ .fini          0x08000d98        0x8 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
+                0x08000da0                . = ALIGN (0x4)
+                0x08000da0                _etext = .
 
-.vfp11_veneer   0x08000908        0x0
- .vfp11_veneer  0x08000908        0x0 linker stubs
+.vfp11_veneer   0x08000da0        0x0
+ .vfp11_veneer  0x08000da0        0x0 linker stubs
 
-.v4_bx          0x08000908        0x0
- .v4_bx         0x08000908        0x0 linker stubs
+.v4_bx          0x08000da0        0x0
+ .v4_bx         0x08000da0        0x0 linker stubs
 
-.iplt           0x08000908        0x0
- .iplt          0x08000908        0x0 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+.iplt           0x08000da0        0x0
+ .iplt          0x08000da0        0x0 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
 
-.rodata         0x08000908        0x4
-                0x08000908                . = ALIGN (0x4)
+.rodata         0x08000da0       0x14
+                0x08000da0                . = ALIGN (0x4)
  *(.rodata)
+ .rodata        0x08000da0        0xd src/005spiarduino.o
  *(.rodata*)
+ *fill*         0x08000dad        0x3 
  .rodata._global_impure_ptr
-                0x08000908        0x4 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-impure.o)
-                0x08000908                _global_impure_ptr
-                0x0800090c                . = ALIGN (0x4)
+                0x08000db0        0x4 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-impure.o)
+                0x08000db0                _global_impure_ptr
+                0x08000db4                . = ALIGN (0x4)
 
-.rel.dyn        0x0800090c        0x0
- .rel.iplt      0x0800090c        0x0 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+.rel.dyn        0x08000db4        0x0
+ .rel.iplt      0x08000db4        0x0 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
 
-.ARM.extab      0x0800090c        0x0
-                0x0800090c                . = ALIGN (0x4)
+.ARM.extab      0x08000db4        0x0
+                0x08000db4                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0800090c                . = ALIGN (0x4)
+                0x08000db4                . = ALIGN (0x4)
 
-.ARM            0x0800090c        0x0
-                0x0800090c                . = ALIGN (0x4)
-                0x0800090c                __exidx_start = .
+.ARM            0x08000db4        0x0
+                0x08000db4                . = ALIGN (0x4)
+                0x08000db4                __exidx_start = .
  *(.ARM.exidx*)
-                0x0800090c                __exidx_end = .
-                0x0800090c                . = ALIGN (0x4)
+                0x08000db4                __exidx_end = .
+                0x08000db4                . = ALIGN (0x4)
 
-.preinit_array  0x0800090c        0x0
-                0x0800090c                . = ALIGN (0x4)
-                0x0800090c                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x08000db4        0x0
+                0x08000db4                . = ALIGN (0x4)
+                0x08000db4                PROVIDE (__preinit_array_start, .)
  *(.preinit_array*)
-                0x0800090c                PROVIDE (__preinit_array_end, .)
-                0x0800090c                . = ALIGN (0x4)
+                0x08000db4                PROVIDE (__preinit_array_end, .)
+                0x08000db4                . = ALIGN (0x4)
 
-.init_array     0x0800090c        0x8
-                0x0800090c                . = ALIGN (0x4)
-                0x0800090c                PROVIDE (__init_array_start, .)
+.init_array     0x08000db4        0x8
+                0x08000db4                . = ALIGN (0x4)
+                0x08000db4                PROVIDE (__init_array_start, .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00000
-                0x0800090c        0x4 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
+                0x08000db4        0x4 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
  *(.init_array*)
- .init_array    0x08000910        0x4 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
-                0x08000914                PROVIDE (__init_array_end, .)
-                0x08000914                . = ALIGN (0x4)
+ .init_array    0x08000db8        0x4 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+                0x08000dbc                PROVIDE (__init_array_end, .)
+                0x08000dbc                . = ALIGN (0x4)
 
-.fini_array     0x08000914        0x4
-                0x08000914                . = ALIGN (0x4)
-                0x08000914                PROVIDE (__fini_array_start, .)
+.fini_array     0x08000dbc        0x4
+                0x08000dbc                . = ALIGN (0x4)
+                0x08000dbc                PROVIDE (__fini_array_start, .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08000914        0x4 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
-                0x08000918                PROVIDE (__fini_array_end, .)
-                0x08000918                . = ALIGN (0x4)
-                0x08000918                _sidata = LOADADDR (.data)
+ .fini_array    0x08000dbc        0x4 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+                0x08000dc0                PROVIDE (__fini_array_end, .)
+                0x08000dc0                . = ALIGN (0x4)
+                0x08000dc0                _sidata = LOADADDR (.data)
 
-.data           0x20000000      0x42c load address 0x08000918
+.data           0x20000000      0x42c load address 0x08000dc0
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _sdata = .
  *(.data)
@@ -482,11 +565,11 @@ LOAD d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16
                 0x2000042c                . = ALIGN (0x4)
                 0x2000042c                _edata = .
 
-.igot.plt       0x2000042c        0x0 load address 0x08000d44
+.igot.plt       0x2000042c        0x0 load address 0x080011ec
  .igot.plt      0x2000042c        0x0 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
                 0x2000042c                . = ALIGN (0x4)
 
-.bss            0x2000042c       0x40 load address 0x08000d44
+.bss            0x2000042c       0x40 load address 0x080011ec
                 0x2000042c                _sbss = .
                 0x2000042c                __bss_start__ = _sbss
  *(.bss)
@@ -509,7 +592,7 @@ LOAD d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16
                 0x2000046c                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x2000046c      0x404 load address 0x08000d44
+                0x2000046c      0x404 load address 0x080011ec
                 0x20000470                . = ALIGN (0x8)
  *fill*         0x2000046c        0x4 
                 0x20000470                PROVIDE (end, .)
@@ -534,88 +617,119 @@ LOAD d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16
  .ARM.attributes
                 0x00000056       0x39 drivers/src/stm32f401xx_gpio_driver.o
  .ARM.attributes
-                0x0000008f       0x39 src/002ledbutton.o
+                0x0000008f       0x39 drivers/src/stm32f401xx_spi_driver.o
  .ARM.attributes
-                0x000000c8       0x21 startup/startup_stm32.o
+                0x000000c8       0x39 src/005spiarduino.o
  .ARM.attributes
-                0x000000e9       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-impure.o)
+                0x00000101       0x21 startup/startup_stm32.o
  .ARM.attributes
-                0x0000011d       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-init.o)
+                0x00000122       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-impure.o)
  .ARM.attributes
-                0x00000151       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
+                0x00000156       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-init.o)
  .ARM.attributes
-                0x00000185       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-atexit.o)
+                0x0000018a       0x20 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-strlen.o)
  .ARM.attributes
-                0x000001b9       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-fini.o)
+                0x000001aa       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
  .ARM.attributes
-                0x000001ed       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-lock.o)
+                0x000001de       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-atexit.o)
  .ARM.attributes
-                0x00000221       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__atexit.o)
+                0x00000212       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-fini.o)
  .ARM.attributes
-                0x00000255       0x22 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
+                0x00000246       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-lock.o)
+ .ARM.attributes
+                0x0000027a       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__atexit.o)
+ .ARM.attributes
+                0x000002ae       0x22 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
 OUTPUT(stm32f401xx_drivers.elf elf32-littlearm)
 
-.debug_info     0x00000000      0x96e
- .debug_info    0x00000000      0x6d5 drivers/src/stm32f401xx_gpio_driver.o
- .debug_info    0x000006d5      0x277 src/002ledbutton.o
- .debug_info    0x0000094c       0x22 startup/startup_stm32.o
+.debug_info     0x00000000     0x18e3
+ .debug_info    0x00000000      0x6d8 drivers/src/stm32f401xx_gpio_driver.o
+ .debug_info    0x000006d8      0x5b9 drivers/src/stm32f401xx_spi_driver.o
+ .debug_info    0x00000c91      0xc30 src/005spiarduino.o
+ .debug_info    0x000018c1       0x22 startup/startup_stm32.o
 
-.debug_abbrev   0x00000000      0x276
- .debug_abbrev  0x00000000      0x159 drivers/src/stm32f401xx_gpio_driver.o
- .debug_abbrev  0x00000159      0x10b src/002ledbutton.o
- .debug_abbrev  0x00000264       0x12 startup/startup_stm32.o
+.debug_abbrev   0x00000000      0x4bf
+ .debug_abbrev  0x00000000      0x175 drivers/src/stm32f401xx_gpio_driver.o
+ .debug_abbrev  0x00000175      0x11c drivers/src/stm32f401xx_spi_driver.o
+ .debug_abbrev  0x00000291      0x21c src/005spiarduino.o
+ .debug_abbrev  0x000004ad       0x12 startup/startup_stm32.o
 
-.debug_aranges  0x00000000       0xd0
+.debug_aranges  0x00000000      0x158
  .debug_aranges
                 0x00000000       0x70 drivers/src/stm32f401xx_gpio_driver.o
  .debug_aranges
-                0x00000070       0x38 src/002ledbutton.o
+                0x00000070       0x78 drivers/src/stm32f401xx_spi_driver.o
  .debug_aranges
-                0x000000a8       0x28 startup/startup_stm32.o
+                0x000000e8       0x48 src/005spiarduino.o
+ .debug_aranges
+                0x00000130       0x28 startup/startup_stm32.o
 
-.debug_ranges   0x00000000       0xa8
+.debug_ranges   0x00000000      0x120
  .debug_ranges  0x00000000       0x60 drivers/src/stm32f401xx_gpio_driver.o
- .debug_ranges  0x00000060       0x28 src/002ledbutton.o
- .debug_ranges  0x00000088       0x20 startup/startup_stm32.o
+ .debug_ranges  0x00000060       0x68 drivers/src/stm32f401xx_spi_driver.o
+ .debug_ranges  0x000000c8       0x38 src/005spiarduino.o
+ .debug_ranges  0x00000100       0x20 startup/startup_stm32.o
 
-.debug_macro    0x00000000     0x184c
- .debug_macro   0x00000000       0x8f drivers/src/stm32f401xx_gpio_driver.o
- .debug_macro   0x0000008f      0xa66 drivers/src/stm32f401xx_gpio_driver.o
- .debug_macro   0x00000af5      0x174 drivers/src/stm32f401xx_gpio_driver.o
- .debug_macro   0x00000c69       0x22 drivers/src/stm32f401xx_gpio_driver.o
- .debug_macro   0x00000c8b       0x87 drivers/src/stm32f401xx_gpio_driver.o
- .debug_macro   0x00000d12       0x51 drivers/src/stm32f401xx_gpio_driver.o
- .debug_macro   0x00000d63       0xef drivers/src/stm32f401xx_gpio_driver.o
- .debug_macro   0x00000e52       0x6a drivers/src/stm32f401xx_gpio_driver.o
- .debug_macro   0x00000ebc      0x1df drivers/src/stm32f401xx_gpio_driver.o
- .debug_macro   0x0000109b      0x658 drivers/src/stm32f401xx_gpio_driver.o
- .debug_macro   0x000016f3       0xc4 drivers/src/stm32f401xx_gpio_driver.o
- .debug_macro   0x000017b7       0x95 src/002ledbutton.o
+.debug_macro    0x00000000     0x2485
+ .debug_macro   0x00000000       0xa3 drivers/src/stm32f401xx_gpio_driver.o
+ .debug_macro   0x000000a3      0xa66 drivers/src/stm32f401xx_gpio_driver.o
+ .debug_macro   0x00000b09      0x174 drivers/src/stm32f401xx_gpio_driver.o
+ .debug_macro   0x00000c7d       0x22 drivers/src/stm32f401xx_gpio_driver.o
+ .debug_macro   0x00000c9f       0x87 drivers/src/stm32f401xx_gpio_driver.o
+ .debug_macro   0x00000d26       0x51 drivers/src/stm32f401xx_gpio_driver.o
+ .debug_macro   0x00000d77       0xef drivers/src/stm32f401xx_gpio_driver.o
+ .debug_macro   0x00000e66       0x6a drivers/src/stm32f401xx_gpio_driver.o
+ .debug_macro   0x00000ed0      0x1df drivers/src/stm32f401xx_gpio_driver.o
+ .debug_macro   0x000010af      0x77d drivers/src/stm32f401xx_gpio_driver.o
+ .debug_macro   0x0000182c       0xca drivers/src/stm32f401xx_gpio_driver.o
+ .debug_macro   0x000018f6       0xc4 drivers/src/stm32f401xx_gpio_driver.o
+ .debug_macro   0x000019ba       0xa3 drivers/src/stm32f401xx_spi_driver.o
+ .debug_macro   0x00001a5d      0x15d src/005spiarduino.o
+ .debug_macro   0x00001bba       0x52 src/005spiarduino.o
+ .debug_macro   0x00001c0c       0x17 src/005spiarduino.o
+ .debug_macro   0x00001c23       0x8d src/005spiarduino.o
+ .debug_macro   0x00001cb0       0x35 src/005spiarduino.o
+ .debug_macro   0x00001ce5       0x9c src/005spiarduino.o
+ .debug_macro   0x00001d81       0x57 src/005spiarduino.o
+ .debug_macro   0x00001dd8       0x58 src/005spiarduino.o
+ .debug_macro   0x00001e30       0x1f src/005spiarduino.o
+ .debug_macro   0x00001e4f       0x43 src/005spiarduino.o
+ .debug_macro   0x00001e92       0x20 src/005spiarduino.o
+ .debug_macro   0x00001eb2      0x18e src/005spiarduino.o
+ .debug_macro   0x00002040      0x330 src/005spiarduino.o
+ .debug_macro   0x00002370       0x10 src/005spiarduino.o
+ .debug_macro   0x00002380       0x35 src/005spiarduino.o
+ .debug_macro   0x000023b5       0xd0 src/005spiarduino.o
 
-.debug_line     0x00000000      0x95b
- .debug_line    0x00000000      0x527 drivers/src/stm32f401xx_gpio_driver.o
- .debug_line    0x00000527      0x3b8 src/002ledbutton.o
- .debug_line    0x000008df       0x7c startup/startup_stm32.o
+.debug_line     0x00000000      0xf64
+ .debug_line    0x00000000      0x56b drivers/src/stm32f401xx_gpio_driver.o
+ .debug_line    0x0000056b      0x4c1 drivers/src/stm32f401xx_spi_driver.o
+ .debug_line    0x00000a2c      0x4bc src/005spiarduino.o
+ .debug_line    0x00000ee8       0x7c startup/startup_stm32.o
 
-.debug_str      0x00000000     0x5d4c
- .debug_str     0x00000000     0x5cca drivers/src/stm32f401xx_gpio_driver.o
-                               0x5ebd (size before relaxing)
- .debug_str     0x00005cca       0x58 src/002ledbutton.o
-                               0x5c59 (size before relaxing)
- .debug_str     0x00005d22       0x2a startup/startup_stm32.o
+.debug_str      0x00000000     0x92cf
+ .debug_str     0x00000000     0x63b3 drivers/src/stm32f401xx_gpio_driver.o
+                               0x65bd (size before relaxing)
+ .debug_str     0x000063b3      0x1c4 drivers/src/stm32f401xx_spi_driver.o
+                               0x6525 (size before relaxing)
+ .debug_str     0x00006577     0x2d2e src/005spiarduino.o
+                               0x9142 (size before relaxing)
+ .debug_str     0x000092a5       0x2a startup/startup_stm32.o
                                  0x85 (size before relaxing)
 
 .comment        0x00000000       0x7e
  .comment       0x00000000       0x7e drivers/src/stm32f401xx_gpio_driver.o
                                  0x7f (size before relaxing)
- .comment       0x0000007e       0x7f src/002ledbutton.o
+ .comment       0x0000007e       0x7f drivers/src/stm32f401xx_spi_driver.o
+ .comment       0x0000007e       0x7f src/005spiarduino.o
 
-.debug_frame    0x00000000      0x428
+.debug_frame    0x00000000      0x658
  .debug_frame   0x00000000      0x1c8 drivers/src/stm32f401xx_gpio_driver.o
- .debug_frame   0x000001c8       0xa0 src/002ledbutton.o
- .debug_frame   0x00000268       0x2c d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-init.o)
- .debug_frame   0x00000294       0x5c d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
- .debug_frame   0x000002f0       0x20 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-atexit.o)
- .debug_frame   0x00000310       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-fini.o)
- .debug_frame   0x00000344       0xb0 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-lock.o)
- .debug_frame   0x000003f4       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__atexit.o)
+ .debug_frame   0x000001c8      0x1e8 drivers/src/stm32f401xx_spi_driver.o
+ .debug_frame   0x000003b0       0xe8 src/005spiarduino.o
+ .debug_frame   0x00000498       0x2c d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-init.o)
+ .debug_frame   0x000004c4       0x5c d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
+ .debug_frame   0x00000520       0x20 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-atexit.o)
+ .debug_frame   0x00000540       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-fini.o)
+ .debug_frame   0x00000574       0xb0 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-lock.o)
+ .debug_frame   0x00000624       0x34 d:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__atexit.o)
