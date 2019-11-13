@@ -2,22 +2,24 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="alt" key="selection"/>
+		<item value="GpioLed." key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="GpioLed-&gt;"/>
+			<item value="GpioPb-&gt;"/>
+			<item value="GpioPb"/>
+			<item value="RCC"/>
+			<item value="spe"/>
 			<item value="alt"/>
 			<item value="GPIO_PinAltFunMode"/>
 			<item value="EXTI15_10_IRQHandler"/>
-			<item value="EXT0_IRQHandler"/>
-			<item value="irq"/>
-			<item value="cr1"/>
-			<item value="CR1"/>
-			<item value="spe"/>
 		</list>
 		<list key="replacehistory">
+			<item value="GpioLed."/>
+			<item value="GpioPb."/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
