@@ -33,7 +33,7 @@ void delay(void);
 
 int main(void)
 {
-	char user_data[] = "Hello World!";
+	char user_data[] = "Hello World";
 
 	//Initialise SPI GPIO pins
 	SPI2_GPIOInit();
@@ -88,7 +88,7 @@ void SPI2_GPIOInit(void)
 	SPIPins.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_ALTFN;
 	SPIPins.GPIO_PinConfig.GPIO_PinAltFunMode = 5;
 	SPIPins.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
-	SPIPins.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PUPD;
+	SPIPins.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_PIN_PU;
 	SPIPins.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_FAST;
 
 	//CLK
@@ -161,5 +161,5 @@ void config_leds(void)
 
 void delay(void)
 {
-	for(int i = 0; i< 250000; i++){}
+	for(int i = 0; i< 500000; i++){}
 }
