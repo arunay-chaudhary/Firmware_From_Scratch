@@ -81,7 +81,7 @@ typedef struct
 #define SPI_SSM_EN                       1
 #define SPI_SSM_DI                       0
 
-#define SPI_RXNE_FLAG	(1 << SPI_SR-RXNE)
+#define SPI_RXNE_FLAG	(1 << SPI_SR_RXNE)
 #define SPI_TXE_FLAG    (1 << SPI_SR_TXE)
 #define SPI_CHSIDE_FLAG (1 << SPI_SR_CHSIDE)
 #define SPI_UDR_FLAG	(1 << SPI_SR_UDR)
@@ -126,6 +126,8 @@ void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority);
 void SPI_IRQHandling(SPI_Handle_t *pSPIHandle);
 
 void SPIPeripheralControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi);
+
+uint8_t SPI_GetFlagStatus (SPI_RegDef_t *pSPIx, uint32_t FlagName);
 
 #endif /* INC_STM32F401XX_SPI_DRIVER_H_ */
 
