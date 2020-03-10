@@ -33,7 +33,7 @@ void delay(void);
 
 int main(void)
 {
-	char user_data[] = "Hello World!";
+	char user_data[] = "Hello World";
 
 	//Initialise SPI GPIO pins
 	SPI2_GPIOInit();
@@ -166,5 +166,5 @@ void config_leds(void)
 
 void delay(void)
 {
-	for(int i = 0; i< 250000; i++){}
+	for(int i = 0; i< 500000; i++){}
 }
