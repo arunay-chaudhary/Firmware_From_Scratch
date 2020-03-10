@@ -1,6 +1,2 @@
 
 .metadata/
-.metadata/.plugins/org.eclipse.cdt.ui/global-build.log
-*.log
-.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
-*.xmi
