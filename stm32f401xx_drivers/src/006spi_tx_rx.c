@@ -25,7 +25,7 @@ uint8_t SPI_verify_rsp(uint8_t ack_byte);
 
 void config_pb(void);
 void config_leds(void);
-void delay(void);
+void delay(uint32_t time);
 void DEBUG_LED(uint8_t ONorOFF);
 
 #define LD2 GPIO_PIN_NO_5
@@ -85,8 +85,8 @@ int main(void)
 	while(1)
 	{
 		while(GPIO_ReadFromInputPin(GPIOC, GPIO_PIN_NO_13) == ENABLE);
-
-		delay();
+//		DEBUG_LED(LED_OFF);
+		delay(500000);
 		//Enable LED
 
 
@@ -116,7 +116,7 @@ int main(void)
 		//end of LED CTRL
 		//CMD Sensor read
 		while(GPIO_ReadFromInputPin(GPIOC, GPIO_PIN_NO_13) == ENABLE);
-		delay();
+		delay(500000);
 
 		cmd_code = COMMAND_SENSOR_READ;
 		SPI_SendData(SPI2, &cmd_code , 1);
@@ -134,20 +134,22 @@ int main(void)
 		{
 			args[0] = ANALOG_PIN0;
 			SPI_SendData(SPI2, args, 1);
-		}
-//		//dummy read to clear RXNE
-		SPI_ReceiveData(SPI2, &dummy_read,1);
-		SPI_SendData(SPI2, &dummy_byte, 1);
+			delay(500000);
 
-		SPI_ReceiveData(SPI2, &analog_read,1);
-		if(analog_read > 1)
-		{
-			GPIO_WriteToOutputPin(GPIOA,GPIO_PIN_NO_5, ENABLE);
-		}
+			SPI_ReceiveData(SPI2, &dummy_read,1);
+			SPI_SendData(SPI2, &dummy_byte, 1);
 
+			SPI_ReceiveData(SPI2, &analog_read,1);
+			if(analog_read)
+			{
+				DEBUG_LED(LED_ON);
+			}
+		}
 		//wait before disabling!
 		while(SPI_GetFlagStatus(SPI2, SPI_BSY_FLAG)); //Wait
 		SPIPeripheralControl(SPI2, DISABLE);
+
+
 //		break;
 	}
 
@@ -245,9 +247,9 @@ uint8_t SPI_verify_rsp(uint8_t ack_byte)
 
 }
 
-void delay(void)
+void delay(uint32_t time)
 {
-	for(int i = 0; i< 500000; i++){}
+	for(int i = 0; i< time; i++){}
 }
 
 void DEBUG_LED(uint8_t ONorOFF)
