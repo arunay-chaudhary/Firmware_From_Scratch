@@ -12,6 +12,7 @@
  *      Author: aruna
  */
 
+#include <stdio.h>
 #include <string.h>
 
 #include "stm32f401xx.h"
@@ -32,11 +33,8 @@ void DEBUG_LED(uint8_t ONorOFF);
 
 #define LD9 9
 
-#define COMMAND_LED_CTRL		0x50
-#define COMMAND_SENSOR_READ		0x51
-#define COMMAND_LED_READ		0x52
-#define COMMAND_PRINT			0x53
-#define COMMAND_READ			0x54
+
+
 
 #define LED_ON					1
 #define LED_OFF					0
@@ -61,6 +59,14 @@ void DEBUG_LED(uint8_t ONorOFF);
  *
  * */
 
+typedef enum{
+	COMMAND_LED_CTRL = 0x50,
+	COMMAND_SENSOR_READ,
+	COMMAND_LED_READ,
+	COMMAND_PRINT,
+	COMMAND_READ
+}CommandId;
+
 
 int main(void)
 {
@@ -79,9 +85,16 @@ int main(void)
 
 	//Hardware SS enabled
 	SPI_SSOEConfig(SPI2, ENABLE);
+
 	uint8_t dummy_byte = 0xff;
 	uint8_t dummy_read;
 	uint8_t analog_read;
+	uint8_t led_state;
+
+	char *msg = "This is a message";
+	uint8_t rx_msg[11];
+
+
 	while(1)
 	{
 		while(GPIO_ReadFromInputPin(GPIOC, GPIO_PIN_NO_13) == ENABLE);
@@ -94,7 +107,7 @@ int main(void)
 		//Enable the SPI enable bit
 		SPIPeripheralControl(SPI2, ENABLE);
 
-		uint8_t cmd_code = COMMAND_LED_CTRL;
+		CommandId cmd_code = COMMAND_LED_CTRL;
 		uint8_t args[2];
 		SPI_SendData(SPI2, &cmd_code , 1);
 
@@ -146,11 +159,98 @@ int main(void)
 			}
 		}
 		//wait before disabling!
+		while(GPIO_ReadFromInputPin(GPIOC, GPIO_PIN_NO_13) == ENABLE);
+		delay(500000);
+
+		cmd_code = COMMAND_LED_READ;
+
+		SPI_SendData(SPI2, &cmd_code, 1);
+
+		//clear RXNE w/ dummy read
+		SPI_ReceiveData(SPI2, &dummy_read, 1);
+
+		//Send dummy data to receiv ack
+		SPI_SendData(SPI2, &dummy_byte, 1);
+
+		ack_byte = 0;
+		SPI_ReceiveData(SPI2, &ack_byte, 1);
+
+		if(SPI_verify_rsp(ack_byte))
+		{
+			args[0] = LD9;
+			SPI_SendData(SPI2, args, 1);
+			SPI_ReceiveData(SPI2, &dummy_read,1);
+			SPI_SendData(SPI2, &dummy_byte, 1);
+
+
+			SPI_ReceiveData(SPI2, &led_state,1);
+			if(led_state)
+			{
+				DEBUG_LED(LED_OFF);
+			}
+
+		}
+
+		while(GPIO_ReadFromInputPin(GPIOC, GPIO_PIN_NO_13) == ENABLE);
+		delay(500000);
+
+		cmd_code = COMMAND_PRINT;
+
+		SPI_SendData(SPI2, &cmd_code, 1);
+
+		//clear RXNE w/ dummy read
+		SPI_ReceiveData(SPI2, &dummy_read, 1);
+
+		//Send some dummy byte to fetch the response from the slave
+		SPI_SendData(SPI2, &dummy_byte, 1);
+
+		ack_byte = 0;
+		SPI_ReceiveData(SPI2, &ack_byte, 1);
+
+		if(SPI_verify_rsp(ack_byte))
+		{
+			args[0] = strlen(msg);
+			SPI_SendData(SPI2, args, 1);
+			SPI_SendData(SPI2, (uint8_t*)msg, args[0]);
+
+
+		}
+
+		while(GPIO_ReadFromInputPin(GPIOC, GPIO_PIN_NO_13) == ENABLE);
+		delay(500000);
+
+		cmd_code = COMMAND_READ;
+
+		SPI_SendData(SPI2, &cmd_code, 1);
+
+		//clear RXNE w/ dummy read
+		SPI_ReceiveData(SPI2, &dummy_read, 1);
+
+		//Send dummy data to fetch
+		SPI_SendData(SPI2, &dummy_byte, 1);
+
+		ack_byte = 0;
+		SPI_ReceiveData(SPI2, &ack_byte, 1);
+
+		if(SPI_verify_rsp(ack_byte))
+		{
+
+			uint32_t i = 0;
+			for(i=0; i < 10;i++)
+			{
+				//Send dummy data to receive ack
+				SPI_SendData(SPI2, &dummy_byte, 1);
+				SPI_ReceiveData(SPI2, &rx_msg[i],1);
+
+			}
+			rx_msg[11] = '\0';
+//			printf("RX_MESSAGE : %s\n", rx_msg);
+		}
+
+
 		while(SPI_GetFlagStatus(SPI2, SPI_BSY_FLAG)); //Wait
 		SPIPeripheralControl(SPI2, DISABLE);
 
-
-//		break;
 	}
 
 
